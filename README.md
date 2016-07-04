@@ -1,6 +1,6 @@
 #[jQuery Inbound Form Plugin](http://cristiano-acosta.github.io/jquery-inbound-form/)
 
-jQuery Inbound Form  is a simple form generator with JSON API for make Marketing Inbound actions, created by [Cristiano Acosta](https://twitter.com/mdo).
+jQuery Inbound Form  is a simple form generator with JSON API for make Marketing Inbound actions, created by [Cristiano Acosta](https://twitter.com/acostacristiano).
 To get started, check out http://cristiano-acosta.github.io/jquery-inbound-form/!
 
 ## Table of contents
@@ -21,6 +21,7 @@ jQuery Inbound Form depends on jQuery. Include them both in end of your HTML cod
 ```
 
 ### Simple Form
+
 You must alter your HTML code inserting this simple code: 
 
 ```html
@@ -33,7 +34,13 @@ Look this demo: [Simple Form](https://github.com/cristiano-acosta/jquery-inbound
 
 ### Modal Form
 
-If you insert this simple code:
+For jQuery Inbound Form depends bootstrap,  include them both in end of your HTML code:
+
+```html
+<script src="$pathto/bootstrap.min.js" type="text/javascript"></script>
+```
+
+And insert this simple code:
 
 ```html
 <a id="integration_form" href="#">Quero receber materiais por email</a>
@@ -53,7 +60,7 @@ $("#integration_form").inboundform();
 
 And this make a form with bootstrap style (optional)
 
-Look this demo:  [Other](https://github.com/cristiano-acosta/jquery-inbound-form/blob/master/demo/other-form.html)
+Look this demo:  [Other](https://github.com/cristiano-acosta/jquery-inbound-form/blob/master/demo/other.html)
 
 ## Options and Methods
 
@@ -63,7 +70,7 @@ Look this demo:  [Other](https://github.com/cristiano-acosta/jquery-inbound-form
 	options = { 
 		'token':'62bb61431348e22850828a5829c4373faafe29c1',  // API Token  
 		'secret':'51a266c2844ccd5cac83d88de88d82d05358aa51', // API Secret 
-		'modal':true, // define if make modal. Default: false 
+		'modal':true, // define if make modal. Default: false. Requeri Bootstrap modal javascript 
 		'fields':{ // make a extra field. Default: none
 			'estado':['PR','SC','SP','RS'], 
 			'nível':['Iniciante','Intermediário','Avançado','Ninja']
@@ -97,13 +104,13 @@ Type: bolean
 
 Default: false
 
-This option generete form inside a modal.
+This option generete form inside a bootstrap modal.
 
 ##### fields
 
 Type: array
 
-Default: { 'input':'input', select:['option',]    }
+Default: { 'radio':['radio'], select:['option',]    }
 
 This option make adtional fields. For defaut the generator has 2 input: name and e-mail, for insert more fields to edit this option.
 
@@ -113,7 +120,6 @@ You can use ``\`` to escape characters that shouldn't be used as separators
 pair (``foo=`` and ``bar``) instead of a URL parameter.
 
 Often it is necessary to quote the values, e.g. ``foo='bar baz'``.
-
 
 
 ## Downloading

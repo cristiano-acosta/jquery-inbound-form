@@ -20,11 +20,31 @@
         secret: "51a266c2844ccd5cac83d88de88d82d05358aa51",
         modal: false,
         fields: {
-          select: ['PR','SC','SP','RS'],
-          radio: ['Iniciante','Intermediário','Avançado','Ninja'],
+          select: ["PR","SC","SP","RS"],
+          radio: ["Iniciante","Intermediário","Avançado","Ninja"]
         }
 			};
-
+    var body = $('body');
+    var options ="";
+    var radios = "";
+    function str2slug(str) {
+      var rep = '_';
+      str = str.toLowerCase()
+        .replace(/\s+/g, rep) // replace whitespace
+      // remove accents, swap ñ for n, etc
+      var from = "àáäâèéëêìíïîòóöôùúüûñç";
+      var to   = "aaaaeeeeiiiioooouuuunc";
+      for (var i=0, l=from.length ; i<l ; i++) {
+        str = str.replace(
+          new RegExp(from.charAt(i), 'g'),
+          to.charAt(i)
+        );
+      }
+      // remove invalid chars
+      str = str.replace(new RegExp('[^a-z0-9'+rep+']',"g"), '')
+        .replace(/-+/g, rep); // collapse dashes;
+      return str;
+    }
 		// The actual plugin constructor
 		function Plugin ( element, options ) {
 			this.element = element;
@@ -42,105 +62,94 @@
 		// Avoid Plugin.prototype conflicts
 		$.extend( Plugin.prototype, {
 			init: function() {
-
 				// Place initialization logic here
 				// You already have access to the DOM element and
 				// the options via the instance, e.g. this.element
 				// and this.settings
 				// you can add more functions like the one below and
 				// call them like the example below
-        if (this.settings != this._defaults) {
-          this.buiderform( this.settings.fields, this.settings.token, this.settings.secret  );
+        if (this.settings !== this._defaults) {
+          this.buiderform( this.settings.fields, this.settings.token, this.settings.secret, this.settings.modal  );
         } else {
-          this.buiderform( this._defaults.fields, this._defaults.token, this._defaults.secret  );
+          this.buiderform( this._defaults.fields, this._defaults.token, this._defaults.secret, this._defaults.modal  );
         }
+
 			},
-      buiderform: function( fields, token, secret ) {
-        //
-        var options ='';
+      buiderform: function( fields, token, secret, modal ) {
         for (var item in fields.select) {
-          options += '<option value="'+fields.select[ item ]+'">'+fields.select[ item ]+'</option>';
+          options += "<option value='"+fields.select[ item ]+"'>"+fields.select[ item ]+"</option>";
         }
-        var radios = ''
-        for (var item in fields.radio) {
+        for (var i in fields.radio) {
+          var value = fields.radio[i];
+          value = str2slug(value);
           radios +=
-            '<label class="radio-inline" for="level-'+ item +'"> ' +
-              '<input name="level" id="level-'+ item +'" value="" type="radio">' +
-              +fields.radio[ item ]+
-            '</label>' ;
+            "<label class='radio-inline' for='level-"+ i +"'><input name='level' id='level-"+ i +"' value='"+ value +"' type='radio'>" + fields.radio[i] + "</label>" ;
         }
-        console.log( fields.radio );
-        console.log( options + radios );
-        var initform = '<form class="form-horizontal">' +
-          '<fieldset>' +
-            '<legend>Inbound Form</legend>' +
-            '<div class="form-group">' +
-              '<label class="col-md-4 control-label" for="name">Name</label> ' +
-              '<div class="col-md-4"> ' +
-              '<input id="name" name="name" placeholder="Name" class="form-control input-md" required="" type="text"> ' +
-              '<span class="help-block">Please, insert your name</span> ' +
-              '</div> ' +
-            '</div>' +
-            '<div class="form-group"> ' +
-              '<label class="col-md-4 control-label" for="email">E-mail</label> ' +
-              '<div class="col-md-4"> ' +
-                '<input id="email" name="email" placeholder="E-mail" class="form-control input-md" required="" type="text">' +
-                '<span class="help-block">Please, insert your e-mail</span> ' +
-              '</div> ' +
-            '</div>';
-
+        var initform =
+          "<form class='form-horizontal'>" +
+          "<fieldset>" +
+            "<div class='form-group'>" +
+              "<label for='name'>Name</label> " +
+              "<input id='name' name='name' placeholder='Name' class='form-control' required='' type='text'> " +
+              "<span class='help-block'>Please, insert your name</span> " +
+            "</div>" +
+            "<div class='form-group'> " +
+              "<label for='email'>E-mail</label> " +
+                "<input id='email' name='email' placeholder='E-mail' class='form-control input-md' required='' type='email'>" +
+                "<span class='help-block'>Please, insert your e-mail</span> " +
+            "</div>";
         var selectfield =
-          '<div class="form-group">' +
-            '<label class="col-md-4 control-label" for="state">State</label> ' +
-            '<div class="col-md-4"> ' +
-              '<select id="state" name="state" class="form-control"> '
-                 ;
-        selectfield = selectfield+options;
-        selectfield +=
-              '</select>' +
-            '</div>' +
-          '</div>';
-
+          "<div class='form-group'>" +
+            "<label for='state'>State</label> " +
+              "<select id='state' name='state' class='form-control'>";
+                selectfield = selectfield+options;
+                selectfield +=
+              "</select>" +
+          "</div>";
         var radiofield =
-          '<div class="form-group"> ' +
-            '<label class="col-md-4 control-label" for="level">Level</label> ' +
-            '<div class="col-md-4"> ' ;
+          "<div class='form-group'> " +
+            "<label for='level'>Level</label> " +
+            "<div class=''> ";
           radiofield = radiofield+radios;
           radiofield +=
-              /*'<label class="radio-inline" for="level-0"> ' +
-                '<input name="level" id="level-0" value="beginner" checked="checked" type="radio">' +
-                'Beginner ' +
-              '</label>' +
-              '<label class="radio-inline" for="level-1">' +
-                '<input name="level" id="level-1" value="intermediate" type="radio">' +
-                'Intermediate' +
-              '</label>' +
-              '<label class="radio-inline" for="level-2">' +
-                '<input name="level" id="level-2" value="advanced" type="radio">' +
-                'Advanced ' +
-              '</label>' +
-              '<label class="radio-inline" for="level-3">' +
-                '<input name="level" id="level-3" value="ninja" type="radio">' +
-                'Ninja' +
-              '</label>' +*/
-              '</div>' +
-            '</div>';
+              "</div>" +
+            "</div>";
         var endform =
-          '<div class="form-group"> ' +
-            '<div class="col-md-12"> ' +
-            '<button type="submit" id="submit" name="submit" class="btn btn-primary">Send</button> ' +
-            '</div> ' +
-          '</div>' +
-          '<input id="token" value="'+token+'" name="token" type="hidden">' +
-          '<input id="secret" value="'+secret+'" name="secret" type="hidden">' +
-          '</fieldset>' +
-          '</form>';
+          "<div class='form-group'> " +
+            "<div class='text-center'> " +
+            "<button type='submit' id='submit' name='submit' class='btn btn-primary'>Send</button> " +
+            "</div> " +
+          "</div>" +
+          "<input id='token' value='"+token+"' name='token' type='hidden'>" +
+          "<input id='secret' value='"+secret+"' name='secret' type='hidden'>" +
+          "</fieldset>" +
+          "</form>";
+          "<div =";
 				// some logic
-        var form = '';
+        var form = "";
+        form = initform+endform;
         if ( fields.select || fields.radio ) {
           form = initform+selectfield+radiofield+endform;
         }
-        $( this.element ).prepend(form);
+        var initmodal =
+          "<div class='modal fade' tabindex='-1' role='dialog'><div class='modal-dialog'><div class='modal-content'> " +
+              "<div class='modal-header'> " +
+                "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button> " +
+                "<h4 class='modal-title'>Inbound Form</h4> " +
+              "</div>" +
+          "<div class='modal-body'>";
+        var endmodal = "</div></div></div></div>";
+        if (modal) {
+          form = initmodal+form+endmodal;
+          if ($(this.element).is('div')) {
+            $(this.element).replaceWith('<a class="btn btn-info" data-toggle="modal" data-target="modal" href="#">Quero receber materiais por email</a>');
+          }
+          $(this.element).attr('data-toggle','modal').attr('data-target','.modal');
+          body.append(form);
+        } else {
+          $(this.element).addClass('container').append(form);
+        }
+        
 			}
 		} );
 

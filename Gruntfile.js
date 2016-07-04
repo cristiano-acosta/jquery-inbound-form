@@ -58,7 +58,7 @@ module.exports = function( grunt ) {
 		coffee: {
 			compile: {
 				files: {
-					"dist/jquery.boilerplate.js": "src/jquery.inbound.form.coffee"
+					"dist/jquery.inbound.form.js": "src/jquery.inbound.form.coffee"
 				}
 			}
 		},

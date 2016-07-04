@@ -17,15 +17,23 @@
       </p>
     <![endif]-->
     <!-- Add your site or application content here -->
-    <div id="integration_form"></div>
+    <div class="container">
+      <div class="text-center">
+        <a id="integration_form" class="btn btn-info" href="#">Quero receber materiais por email</a>
+      </div>
+    </div>
+
+
+
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
     <script src="../src/jquery.inbound.form.js"></script>
     <script>
       $(function () {
         $("#integration_form").inboundform({
           token: "62bb61431348e22850828a5829c4373faafe29c1",
           secret: "51a266c2844ccd5cac83d88de88d82d05358aa51",
-          modal: false,
+          modal: true,
           fields: {
             select: ["TEST", "SC", "SP", "RS"],
             radio: ["Iniciante", "Intermediário", "Avançado", "Ninja"]

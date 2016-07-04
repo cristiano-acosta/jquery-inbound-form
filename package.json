@@ -4,8 +4,8 @@
       {
         "raw": "cristiano-acosta@github:cristiano-acosta/jquery-inbound-form",
         "scope": null,
-        "escapedName": "jquery-boilerplate",
-        "name": "jquery-boilerplate",
+        "escapedName": "jquery-inbound-form",
+        "name": "jquery-inbound-form",
         "rawSpec": "github:cristiano-acosta/jquery-inbound-form",
         "spec": "github:cristiano-acosta/jquery-inbound-form",
         "type": "hosted",
@@ -19,7 +19,7 @@
           "directUrl": "https://raw.githubusercontent.com/cristiano-acosta/jquery-inbound-form/master/package.json"
         }
       },
-      "C:\\Users\\Cristiano\\AppData\\Roaming\\npm\\node_modules\\generator-jquery-boilerplate"
+      "C:\\Users\\Cristiano\\AppData\\Roaming\\npm\\node_modules\\generator-jquery-inbound-form"
     ]
   ],
   "_from": "cristiano-acosta/jquery-inbound-form",
@@ -31,8 +31,8 @@
   "_requested": {
     "raw": "cristiano-acosta@github:cristiano-acosta/jquery-inbound-form",
     "scope": null,
-    "escapedName": "jquery-boilerplate",
-    "name": "jquery-boilerplate",
+    "escapedName": "jquery-inbound-form",
+    "name": "jquery-inbound-form",
     "rawSpec": "github:cristiano-acosta/jquery-inbound-form",
     "spec": "github:cristiano-acosta/jquery-inbound-form",
     "type": "hosted",
@@ -47,13 +47,13 @@
     }
   },
   "_requiredBy": [
-    "/generator-jquery-boilerplate"
+    "/generator-jquery-inbound-form"
   ],
   "_resolved": "git://github.com/cristiano-acosta/jquery-inbound-form.git#a270f97ba531ecf52de280bdb3ea56d3c8c0122b",
   "_shasum": "e7bdc67254d713f179ad970d09b9ee3c8d606129",
   "_shrinkwrap": null,
   "_spec": "cristiano-acosta@github:cristiano-acosta/jquery-inbound-form",
-  "_where": "C:\\Users\\Cristiano\\AppData\\Roaming\\npm\\node_modules\\generator-jquery-boilerplate",
+  "_where": "C:\\Users\\Cristiano\\AppData\\Roaming\\npm\\node_modules\\generator-jquery-inbound-form",
   "author": {
     "name": "Cristiano Acosta",
     "email": "cristiano-acosta@hotmail.com",
@@ -72,7 +72,7 @@
   "dependencies": {
     "jquery": ">=1.5.1"
   },
-  "description": "A jump-start for jQuery plugins development.",
+  "description": "jQuery Inbound Form  is a simple form generator with JSON API for make Marketing Inbound actions.",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-coffee": "^0.13.0",
@@ -92,7 +92,7 @@
     "qunitjs": "^1.19.0"
   },
   "gitHead": "a270f97ba531ecf52de280bdb3ea56d3c8c0122b",
-  "homepage": "http://jqueryboilerplate.com",
+  "homepage": "http://cristiano-acosta.github.io/jquery-inbound-form/",
   "keywords": [
     "jquery-plugin",
     "jquery",
@@ -100,7 +100,7 @@
     "plugins"
   ],
   "license": "MIT",
-  "name": "jquery-boilerplate",
+  "name": "jquery-inbound-form",
   "optionalDependencies": {},
   "readme": "",
   "readmeFilename": "README.md",
@@ -112,5 +112,5 @@
     "jscs": "jscs src",
     "test": "npm run jscs && grunt travis --verbose"
   },
-  "version": "4.1.0"
+  "version": "0.0.1"
 }
