@@ -23,14 +23,14 @@ module.exports = function( grunt ) {
 				banner: "<%= meta.banner %>"
 			},
 			dist: {
-				src: [ "src/jquery.boilerplate.js" ],
-				dest: "dist/jquery.boilerplate.js"
+				src: [ "src/jquery.inbound.form.js" ],
+				dest: "dist/jquery.inbound.form.js"
 			}
 		},
 
 		// Lint definitions
 		jshint: {
-			files: [ "src/jquery.boilerplate.js", "test/**/*" ],
+			files: [ "src/jquery.inbound.form.js", "test/**/*" ],
 			options: {
 				jshintrc: ".jshintrc"
 			}
@@ -46,8 +46,8 @@ module.exports = function( grunt ) {
 		// Minify definitions
 		uglify: {
 			dist: {
-				src: [ "dist/jquery.boilerplate.js" ],
-				dest: "dist/jquery.boilerplate.min.js"
+				src: [ "dist/jquery.inbound.form.js" ],
+				dest: "dist/jquery.inbound.form.min.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
@@ -58,7 +58,7 @@ module.exports = function( grunt ) {
 		coffee: {
 			compile: {
 				files: {
-					"dist/jquery.boilerplate.js": "src/jquery.boilerplate.coffee"
+					"dist/jquery.boilerplate.js": "src/jquery.inbound.form.coffee"
 				}
 			}
 		},
@@ -80,12 +80,41 @@ module.exports = function( grunt ) {
 			}
 		},
 
+    sass: {
+      // this is the "dev" Sass config used with "grunt watch" command
+      dev: {
+        options: {
+          style: 'expanded',
+          // tell Sass to look in the Bootstrap stylesheets directory when compiling
+          loadPath: 'bower_components/bootstrap-sass/assets/stylesheets',
+        },
+        files: {
+          // the first path is the output and the second ids the input
+          'demo/style.css': 'demo/sass/style.scss'
+        }
+      },
+      // this is the "production" Sass config used with the "grunt buildcss" command
+      dist: {
+        options: {
+          style: 'compressed',
+          loadPath: 'bower_components/bootstrap-sass/assets/stylesheets'
+        },
+        files: {
+          'demo/style.css': 'demo/sass/style.scss'
+        }
+      }
+    },
+
 		// watch for changes to source
 		// Better than calling grunt a million times
 		// (call 'grunt watch')
 		watch: {
 			files: [ "src/*", "test/**/*" ],
-			tasks: [ "default" ]
+			tasks: [ "default" ],
+      sass: {
+        files: 'demo/sass/*.scss',
+        tasks: ['sass:dev']
+      }
 		}
 
 	} );
@@ -97,9 +126,14 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( "grunt-contrib-coffee" );
 	grunt.loadNpmTasks( "grunt-contrib-watch" );
 	grunt.loadNpmTasks( "grunt-karma" );
+  // sass
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
 	grunt.registerTask( "travis", [ "jshint", "karma:travis" ] );
 	grunt.registerTask( "lint", [ "jshint", "jscs" ] );
 	grunt.registerTask( "build", [ "concat", "uglify" ] );
-	grunt.registerTask( "default", [ "jshint", "build", "karma:unit:run" ] );
+	grunt.registerTask( "default", [ "jshint", "build", "karma:unit:run", "sass" ] );
+  // "grunt buildcss" is the same as running "grunt sass:dist".
+  // if I had other tasks, I could add them to this array.
+  grunt.registerTask('buildcss', ['sass:dist']);
 };

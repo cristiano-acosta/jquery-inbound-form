@@ -3,15 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>jQuery Inbound Form</title>
+        <meta name="description" content="jQuery Inbound Form  is a simple form generator with JSON API for make Marketing Inbound actions, created by [Cristiano Acosta](https://twitter.com/mdo). To get started, check out http://cristiano-acosta.github.io/jquery-inbound-form/!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="style.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -20,13 +18,24 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+      <div id="integration_form"></div>
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
 
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../src/jquery.inbound.form.js"></script>
+        <script>
+          $( function() {
+            $( "#integration_form" ).inboundform( {
+              token: "62bb61431348e22850828a5829c4373faafe29c1",
+              secret: "51a266c2844ccd5cac83d88de88d82d05358aa51",
+              modal: false,
+              fields: {
+                select: ['TEST','SC','SP','RS'],
+                radio: ['Iniciante','Intermediario','Avancado','Ninja']
+              }
+            } );
+          } );
+        </script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

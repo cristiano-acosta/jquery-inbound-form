@@ -23,7 +23,9 @@ jQuery Inbound Form depends on jQuery. Include them both in end of your HTML cod
 ### Simple Form
 You must alter your HTML code inserting this simple code: 
 
-```html <div id="integration_form"> </div> ```
+```html
+<div id="integration_form"> </div>
+```
 
 And this generate a form. 
 

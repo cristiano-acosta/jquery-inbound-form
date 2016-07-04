@@ -1,17 +1,17 @@
 {
-  "name": "jquery-boilerplate",
+  "name": "jquery-inbound-form",
   "license": "MIT",
   "authors": [
-    "Zeno Rocha <hi@zenorocha.com>"
+    "Cristiano Acosta <cristiano-acosta@hotmail.com>"
   ],
-  "description": "A jump-start for jQuery plugins development.",
-  "homepage": "http://jqueryboilerplate.com",
+  "description": "jQuery Inbound Form  is a simple form generator with JSON API for make Marketing Inbound actions.",
+  "homepage": "http://cristiano-acosta.github.io/jquery-inbound-form/",
   "keywords": [
     "jquery",
     "plugin",
     "boilerplate",
     "jquery-plugin",
-    "jquery-boilerplate"
+    "jquery-inbound-form"
   ],
   "main": "src/jquery.boilerplate.js",
   "dependencies": {

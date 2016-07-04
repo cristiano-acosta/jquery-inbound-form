@@ -5,7 +5,7 @@
 	var $testCanvas = $( "#testCanvas" );
 	var $fixture = null;
 
-	QUnit.module( "jQuery Boilerplate", {
+	QUnit.module( "jQuery Inbound Form", {
 		beforeEach: function() {
 
 			// fixture is the element where your jQuery plugin will act
@@ -22,31 +22,31 @@
 
 	QUnit.test( "is inside jQuery library", function( assert ) {
 
-		assert.equal( typeof $.fn.defaultPluginName, "function", "has function inside jquery.fn" );
-		assert.equal( typeof $fixture.defaultPluginName, "function", "another way to test it" );
+		assert.equal( typeof $.fn.inboundform, "function", "has function inside jquery.fn" );
+		assert.equal( typeof $fixture.inboundform, "function", "another way to test it" );
 	} );
 
 	QUnit.test( "returns jQuery functions after called (chaining)", function( assert ) {
 		assert.equal(
-			typeof $fixture.defaultPluginName().on,
+			typeof $fixture.inboundform().on,
 			"function",
 			"'on' function must exist after plugin call" );
 	} );
 
 	QUnit.test( "caches plugin instance", function( assert ) {
-		$fixture.defaultPluginName();
+		$fixture.inboundform();
 		assert.ok(
-			$fixture.data( "plugin_defaultPluginName" ),
+			$fixture.data( "plugin_inboundform" ),
 			"has cached it into a jQuery data"
 		);
 	} );
 
 	QUnit.test( "enable custom config", function( assert ) {
-		$fixture.defaultPluginName( {
+		$fixture.inboundform( {
 			foo: "bar"
 		} );
 
-		var pluginData = $fixture.data( "plugin_defaultPluginName" );
+		var pluginData = $fixture.data( "plugin_inboundform" );
 
 		assert.deepEqual(
 			pluginData.settings,
@@ -60,20 +60,20 @@
 	} );
 
 	QUnit.test( "changes the element text", function( assert ) {
-		$fixture.defaultPluginName();
+		$fixture.inboundform();
 
-		assert.equal( $fixture.text(), "jQuery Boilerplate" );
+		assert.equal( $fixture.text(), "jQuery Inbound Form" );
 	} );
 
 	QUnit.test(
 		"has #yourOtherFunction working as expected",
 		function( assert ) {
-			$fixture.defaultPluginName();
+			$fixture.inboundform();
 
-			var instance = $fixture.data( "plugin_defaultPluginName" ),
+			var instance = $fixture.data( "plugin_inboundform" ),
 				expectedText = "foobar";
 
-			instance.yourOtherFunction( expectedText );
+			instance.buiderform( expectedText );
 			assert.equal( $fixture.text(), expectedText );
 		}
 	);

@@ -8,9 +8,15 @@ do ($ = jQuery, window, document) ->
 	# minified (especially when both are regularly referenced in your plugin).
 
 	# Create the defaults once
-	pluginName = "defaultPluginName"
+	pluginName = "inboundform"
 	defaults =
-		property: "value"
+    token: "62bb61431348e22850828a5829c4373faafe29c1",
+    secret: "51a266c2844ccd5cac83d88de88d82d05358aa51",
+    modal: false,
+    fields: {
+      select: ['PR','SC','SP','RS'],
+      radio: ['Iniciante','Intermediário','Avançado','Ninja'],
+    }
 
 	# The actual plugin constructor
 	class Plugin
@@ -29,6 +35,10 @@ do ($ = jQuery, window, document) ->
 			# You already have access to the DOM element and the options via the instance,
 			# e.g., @element and @settings
 			console.log "xD"
+      $( "body" ).prepend(
+        ''
+      );
+
 
 		yourOtherFunction: ->
 			# some logic
