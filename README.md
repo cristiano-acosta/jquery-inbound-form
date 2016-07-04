@@ -123,11 +123,16 @@ Several quick start options are available:
 * Install with [Bower](http://bower.io): 
 ```sh
 $ bower install jquery-inbound-form
-```.
+```
+
+
 * Install with [npm](https://www.npmjs.com): 
 ```sh
 $ npm install jquery-inbound-form
 ```
+
+
+
 
 ## Copyright and license
 
