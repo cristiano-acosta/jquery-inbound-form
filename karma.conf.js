@@ -7,7 +7,7 @@ module.exports = function( config ) {
 			"test/setup.js",
 			"test/spec/*"
 		],
-		frameworks: [ "qunit" ],
+		frameworks: [ "jasmine" ],
 		autoWatch: true
 	} );
 };

@@ -30,7 +30,7 @@ module.exports = function( grunt ) {
 
 		// Lint definitions
 		jshint: {
-			files: [ "src/jquery.inbound.form.js", "test/**/*" ],
+			files: [ "src/jquery.inbound.form.js", "test/**/*.js" ],
 			options: {
 				jshintrc: ".jshintrc"
 			}

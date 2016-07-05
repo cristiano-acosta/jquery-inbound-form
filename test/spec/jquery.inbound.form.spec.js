@@ -43,7 +43,13 @@
 
 	QUnit.test( "enable custom config", function( assert ) {
 		$fixture.inboundform( {
-			foo: "bar"
+      token: "62bb61431348e22850828a5829c4373faafe29c1",
+      secret: "51a266c2844ccd5cac83d88de88d82d05358aa51",
+      modal: false,
+      fields: {
+        select: ["TEST", "SC", "SP", "RS"],
+        radio: ["Iniciante", "Intermediário", "Avançado", "Ninja"]
+      }
 		} );
 
 		var pluginData = $fixture.data( "plugin_inboundform" );
@@ -51,8 +57,13 @@
 		assert.deepEqual(
 			pluginData.settings,
 			{
-				propertyName: "value",
-				foo: "bar"
+        token: "62bb61431348e22850828a5829c4373faafe29c1",
+        secret: "51a266c2844ccd5cac83d88de88d82d05358aa51",
+        modal: false,
+        fields: {
+          select: ["TEST", "SC", "SP", "RS"],
+          radio: ["Iniciante", "Intermediário", "Avançado", "Ninja"]
+        }
 			},
 			"extend plugin settings"
 		);
