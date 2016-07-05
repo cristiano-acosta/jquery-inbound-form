@@ -73,7 +73,7 @@
 			var instance = $fixture.data( "plugin_inboundform" ),
 				expectedText = "foobar";
 
-			instance.buiderform( expectedText );
+			instance._BuiderForm( expectedText );
 			assert.equal( $fixture.text(), expectedText );
 		}
 	);

@@ -34,7 +34,7 @@ Look this demo: [Simple Form](https://github.com/cristiano-acosta/jquery-inbound
 
 ### Modal Form
 
-For jQuery Inbound Form depends bootstrap,  include them both in end of your HTML code:
+For work on modal this depends a bootstrap modal javascript plugin, please,  include them both in end of your HTML code:
 
 ```html
 <script src="$pathto/bootstrap.min.js" type="text/javascript"></script>

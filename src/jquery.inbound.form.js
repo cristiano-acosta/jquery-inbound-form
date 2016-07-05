@@ -20,8 +20,8 @@
         secret: "51a266c2844ccd5cac83d88de88d82d05358aa51",
         modal: false,
         fields: {
-          select: ["PR","SC","SP","RS"],
-          radio: ["Iniciante","Intermediário","Avançado","Ninja"]
+          select: ["option-1","option-2","option-3","option-4"],
+          radio: ["radio-1","radio-2","radio-3","radio-4"]
         }
 			};
     var body = $('body');
@@ -69,13 +69,13 @@
 				// you can add more functions like the one below and
 				// call them like the example below
         if (this.settings !== this._defaults) {
-          this.buiderform( this.settings.fields, this.settings.token, this.settings.secret, this.settings.modal  );
+          this._BuiderForm( this.settings.fields, this.settings.token, this.settings.secret, this.settings.modal  );
         } else {
-          this.buiderform( this._defaults.fields, this._defaults.token, this._defaults.secret, this._defaults.modal  );
+          this._BuiderForm( this._defaults.fields, this._defaults.token, this._defaults.secret, this._defaults.modal  );
         }
 
 			},
-      buiderform: function( fields, token, secret, modal ) {
+      _BuiderForm: function(fields, token, secret, modal ) {
         for (var item in fields.select) {
           options += "<option value='"+fields.select[ item ]+"'>"+fields.select[ item ]+"</option>";
         }
@@ -124,7 +124,6 @@
           "<input id='secret' value='"+secret+"' name='secret' type='hidden'>" +
           "</fieldset>" +
           "</form>";
-          "<div =";
 				// some logic
         var form = "";
         form = initform+endform;
@@ -149,9 +148,10 @@
         } else {
           $(this.element).addClass('container').append(form);
         }
-        
-			}
-		} );
+      }
+
+		}
+    );
 
 		// A really lightweight plugin wrapper around the constructor,
 		// preventing against multiple instantiations
