@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>jQuery Inbound Form Plugin by cristiano-acosta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">jQuery Inbound Form Plugin</h1>
+      <h2 class="project-tagline">jQuery Inbound Form  is a simple form generator with JSON API for make Marketing Inbound actions.</h2>
+      <a href="https://github.com/cristiano-acosta/jquery-inbound-form" class="btn">View on GitHub</a>
+      <a href="https://github.com/cristiano-acosta/jquery-inbound-form/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/cristiano-acosta/jquery-inbound-form/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="jquery-inbound-form-plugin" class="anchor" href="#jquery-inbound-form-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://cristiano-acosta.github.io/jquery-inbound-form/">jQuery Inbound Form Plugin</a>
+</h1>
+
+<p>jQuery Inbound Form  is a simple form generator with JSON API for make Marketing Inbound actions, created by <a href="https://twitter.com/acostacristiano">Cristiano Acosta</a>.
+To get started, check out <a href="http://cristiano-acosta.github.io/jquery-inbound-form/">http://cristiano-acosta.github.io/jquery-inbound-form/</a>!</p>
+
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of contents</h2>
+
+<ul>
+<li><a href="#how-to-use?">How to Use?</a></li>
+<li><a href="#options-and-methods">Options and Methods</a></li>
+<li><a href="#downloading">Downloading</a></li>
+<li><a href="#copyright-and-license">Copyright and license</a></li>
+</ul>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to Use?</h2>
+
+<p>jQuery Inbound Form depends on jQuery. Include them both in end of your HTML code:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>$pathto/jquery.js<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>jquery.inbound.form.js<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h3>
+<a id="simple-form" class="anchor" href="#simple-form" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simple Form</h3>
+
+<p>You must alter your HTML code inserting this simple code: </p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>integration_form<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>And this generate a form. </p>
+
+<p>Look this demo: <a href="https://github.com/cristiano-acosta/jquery-inbound-form/blob/master/demo/index.html">Simple Form</a> </p>
+
+<h3>
+<a id="modal-form" class="anchor" href="#modal-form" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modal Form</h3>
+
+<p>For work on modal this depends a bootstrap modal javascript plugin, please,  include them both in end of your HTML code:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>$pathto/bootstrap.min.js<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>And insert this simple code:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">a</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>integration_form<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span>&gt;Quero receber materiais por email&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<p>And this generate a form inside a modal</p>
+
+<p>Look this demo: <a href="https://github.com/cristiano-acosta/jquery-inbound-form/blob/master/demo/modal-form.html">Modal Form</a></p>
+
+<h3>
+<a id="other" class="anchor" href="#other" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other</h3>
+
+<p>Call to plugin use jquery like:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>#integration_form<span class="pl-pds">"</span></span>).<span class="pl-en">inboundform</span>();</pre></div>
+
+<p>And this make a form with bootstrap style (optional)</p>
+
+<p>Look this demo:  <a href="https://github.com/cristiano-acosta/jquery-inbound-form/blob/master/demo/other.html">Other</a></p>
+
+<h2>
+<a id="options-and-methods" class="anchor" href="#options-and-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options and Methods</h2>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<div class="highlight highlight-source-js"><pre>    options <span class="pl-k">=</span> { 
+        <span class="pl-s"><span class="pl-pds">'</span>token<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>62bb61431348e22850828a5829c4373faafe29c1<span class="pl-pds">'</span></span>,  <span class="pl-c">// API Token  </span>
+        <span class="pl-s"><span class="pl-pds">'</span>secret<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">'</span>51a266c2844ccd5cac83d88de88d82d05358aa51<span class="pl-pds">'</span></span>, <span class="pl-c">// API Secret </span>
+        <span class="pl-s"><span class="pl-pds">'</span>modal<span class="pl-pds">'</span></span><span class="pl-k">:</span><span class="pl-c1">true</span>, <span class="pl-c">// define if make modal. Default: false. Requeri Bootstrap modal javascript </span>
+        <span class="pl-s"><span class="pl-pds">'</span>fields<span class="pl-pds">'</span></span><span class="pl-k">:</span>{ <span class="pl-c">// make a extra field. Default: none</span>
+            <span class="pl-s"><span class="pl-pds">'</span>estado<span class="pl-pds">'</span></span><span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">'</span>PR<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>SC<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>SP<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>RS<span class="pl-pds">'</span></span>], 
+            <span class="pl-s"><span class="pl-pds">'</span>nível<span class="pl-pds">'</span></span><span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">'</span>Iniciante<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>Intermediário<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>Avançado<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>Ninja<span class="pl-pds">'</span></span>]
+        } 
+    }</pre></div>
+
+<h3>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h3>
+
+<p>The options for this generator work as service to generate a JSON endpoint to insert on data base the values. This healp to integrate others API. </p>
+
+<h4>
+<a id="inboundformoptions" class="anchor" href="#inboundformoptions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.inboundform({options})</h4>
+
+<h5>
+<a id="token" class="anchor" href="#token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>token</h5>
+
+<p>Type: number (seconds)</p>
+
+<p>Default: 62bb61431348e22850828a5829c4373faafe29c1</p>
+
+<p>Useful when the site .</p>
+
+<h5>
+<a id="secret" class="anchor" href="#secret" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>secret</h5>
+
+<p>Type: </p>
+
+<p>Default: 51a266c2844ccd5cac83d88de88d82d05358aa51</p>
+
+<h5>
+<a id="modal" class="anchor" href="#modal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>modal</h5>
+
+<p>Type: bolean</p>
+
+<p>Default: false</p>
+
+<p>This option generete form inside a bootstrap modal.</p>
+
+<h5>
+<a id="fields" class="anchor" href="#fields" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>fields</h5>
+
+<p>Type: array</p>
+
+<p>Default: { 'radio':['radio'], select:['option',]    }</p>
+
+<p>This option make adtional fields. For defaut the generator has 2 input: name and e-mail, for insert more fields to edit this option.</p>
+
+<p>You can use <code>\</code> to escape characters that shouldn't be used as separators
+(or parts thereof). For instance, <code>foo\==bar</code> will become a data key/value
+pair (<code>foo=</code> and <code>bar</code>) instead of a URL parameter.</p>
+
+<p>Often it is necessary to quote the values, e.g. <code>foo='bar baz'</code>.</p>
+
+<h2>
+<a id="downloading" class="anchor" href="#downloading" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloading</h2>
+
+<p>Several quick start options are available:</p>
+
+<ul>
+<li>
+<a href="https://github.com/cristiano-acosta/jquery-inbound-form.git">Download the latest release</a>.</li>
+<li><p>Clone the repo: <code>git clone https://github.com/cristiano-acosta/jquery-inbound-form.git</code>.</p></li>
+<li><p>Install with <a href="http://bower.io">Bower</a>: </p></li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>$ bower install jquery-inbound-form</pre></div>
+
+<ul>
+<li>Install with <a href="https://www.npmjs.com">npm</a>: </li>
+</ul>
+
+<div class="highlight highlight-source-shell"><pre>$ npm install jquery-inbound-form</pre></div>
+
+<h2>
+<a id="copyright-and-license" class="anchor" href="#copyright-and-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Copyright and license</h2>
+
+<p>All code licensed under the <a href="http://fsf.org/">GNU GENERAL PUBLIC LICENSE</a>. All images licensed under <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>. In other words you are basically free to do whatever you want. Just don't remove my name from the source.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/cristiano-acosta/jquery-inbound-form">jQuery Inbound Form Plugin</a> is maintained by <a href="https://github.com/cristiano-acosta">cristiano-acosta</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
